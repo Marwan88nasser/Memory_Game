@@ -1,0 +1,145 @@
+body {
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  background-color: #1f2641;
+  overflow: hidden;
+}
+
+.splash-screen {
+  background-color: #673ab7ab;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.splash-screen .wrong-message {
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.splash-screen .player-name {
+  outline: none;
+  font-family: inherit;
+  width: 100%;
+  max-width: 525px;
+}
+
+.startPlay-btn {
+  position: absolute;
+  left: 80%;
+  top: 15px;
+}
+
+.splashBtn-leaderBored {
+  top: 60px;
+  right: 40px;
+}
+
+@media (max-width: 525px) {
+  .splash-screen .player-name {
+    max-width: 310px;
+  }
+}
+
+.splash-screen .player-name:focus::placeholder {
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.game-stats {
+  max-width: 850px;
+  background-color: #6c63ff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+@media (min-width: 767px) {
+  .game-stats.spread .game-time,
+  .game-stats.spread .player-tries {
+    transition: 0.4s;
+    position: fixed;
+    top: 15%;
+    background-color: #6c63ff;
+    padding: 4px;
+    border-radius: 6px;
+    z-index: 11;
+  }
+
+  .game-stats.spread .game-time {
+    left: 1%;
+  }
+
+  .game-stats.spread .player-tries {
+    right: 1%;
+  }
+}
+
+.memory-blocks {
+  background-color: #2e3267;
+  max-width: 850px;
+}
+
+.memory-blocks.stop-click {
+  pointer-events: none;
+}
+
+.memory-box {
+  height: 140px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  flex: 1 0 140px;
+  margin: 0 8px 18px;
+}
+
+.memory-box.flipped,
+.memory-box.matched {
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+.memory-box .front {
+  background-color: #827ce3;
+  line-height: 140px;
+  border: 6px solid #555ba3;
+}
+
+.memory-box .front::before {
+  content: "!";
+  font-weight: 600;
+  font-size: 140px;
+}
+
+.memory-box .back {
+  background-color: #817aff;
+  transform: rotateY(180deg);
+  border: 6px solid #817aff;
+}
+
+.memory-box .face {
+  backface-visibility: hidden;
+}
+
+.leaderBoard-btn {
+  cursor: pointer;
+}
+
+.leader-board {
+  background-color: #2e3267;
+}
+
+.leader-board .player-stats {
+  background-color: #827ce3;
+}
+
+.leader-board .leaderBoard-Title {
+  background-color: #827ce3;
+}
+
+.leader-board .player-stats:last-child {
+  margin-bottom: 0px !important;
+}
+
+.leader-board .player-stats > div {
+  background-color: #2e3267;
+}

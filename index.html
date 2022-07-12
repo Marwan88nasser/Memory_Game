@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Memory Game</title>
+  </head>
+  <body>
+    <div
+      class="splash-screen position-fixed top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center"
+    >
+      <div
+        class="wrong-message position-absolute top-0 start-0 w-100 bg-danger p-3 text-center"
+      >
+        <p class="mb-0 text-white">You Have To Write Your Name Before Start</p>
+      </div>
+      <button
+        class="btn btn-danger mb-3 splashBtn-leaderBored position-absolute"
+      >
+        Show LeaderBored
+      </button>
+      <input
+        type="text"
+        class="player-name rounded-pill px-3 py-2 border-0"
+        id="player-name"
+        placeholder="Enter Your Name"
+      />
+      <button
+        class="main-startBtn btn btn-danger mt-3 px-3 rounded-3 text-white"
+      >
+        Start Game
+      </button>
+    </div>
+    <div class="game-container">
+      <div class="container pt-3">
+        <button
+          class="btn btn-danger mb-3 show-leaderBoredBtn"
+          data-section="leader-board"
+        >
+          Show LeaderBored
+        </button>
+        <div
+          class="game-stats d-flex flex-wrap align-items-center justify-content-between mx-auto py-3 px-5 text-white rounded-3"
+        >
+          <div class="player-name text-capitalize">Hello : <span></span></div>
+          <div class="game-time text-capitalize">Game Time : <span></span></div>
+          <div class="player-tries text-capitalize">
+            Wrong Tries : <span>0</span>
+          </div>
+        </div>
+        <div
+          class="memory-blocks d-flex flex-wrap mt-4 mb-3 mx-auto pt-3 pb-0 px-1"
+        >
+          <div class="memory-box position-relative" data-game="White-Minister">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_1.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+          <div class="memory-box position-relative" data-game="White-Minister">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_1.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+
+          <div class="memory-box position-relative" data-game="Cochin-papers">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_2.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+          <div class="memory-box position-relative" data-game="Cochin-papers">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_2.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+
+          <div class="memory-box position-relative" data-game="pink-flowers">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_3.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+          <div class="memory-box position-relative" data-game="pink-flowers">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_3.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+
+          <div class="memory-box position-relative" data-game="Snowman">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_4.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+          <div class="memory-box position-relative" data-game="Snowman">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_4.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+
+          <div class="memory-box position-relative" data-game="Batman-Joker">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_5.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+          <div class="memory-box position-relative" data-game="Batman-Joker">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_5.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+
+          <div class="memory-box position-relative" data-game="wooden-bunny">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_6.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+          <div class="memory-box position-relative" data-game="wooden-bunny">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_6.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+
+          <div class="memory-box position-relative" data-game="Sunflower">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_7.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+          <div class="memory-box position-relative" data-game="Sunflower">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_7.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+
+          <div class="memory-box position-relative" data-game="SnowLady-son">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_8.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+          <div class="memory-box position-relative" data-game="SnowLady-son">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_8.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+
+          <div class="memory-box position-relative" data-game="zero">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_9.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+          <div class="memory-box position-relative" data-game="zero">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_9.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+
+          <div class="memory-box position-relative" data-game="Black-Minister">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_10.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+          <div class="memory-box position-relative" data-game="Black-Minister">
+            <div
+              class="face front text-white position-absolute text-center w-100 h-100"
+            ></div>
+            <div class="face back position-absolute text-center w-100 h-100">
+              <img
+                src="images/memory_10.webp"
+                alt="memory-game-image"
+                class="w-100 mh-100"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio id="success" src="sounds/collect-5930.mp3" preload="auto"></audio>
+    <audio
+      id="error"
+      src="sounds/failure-drum-sound-effect-2-7184.mp3"
+      preload="auto"
+    ></audio>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
